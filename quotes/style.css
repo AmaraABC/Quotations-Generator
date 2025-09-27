@@ -28,16 +28,6 @@ header h1 {
 }
 
 main {
-    width: auto;
-    max-width: 475px;
-    margin: 2em auto;
-    background-color: rgb(194, 194, 194);
-    border-radius: .75rem;
-    padding: 1.5em;
-    height: 400px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
     flex: 1;
 }
 
@@ -56,18 +46,21 @@ hr {
     border: 2px solid rgb(194, 194, 194);
 }
 
-aside {
-    margin: 2em auto;
-
-}
-
-aside h2 {
-    color: rgb(46, 46, 46);
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-}
-
 footer {
     text-align: center;
+}
+
+.main-div {
+    width: auto;
+    max-width: 475px;
+    margin: 2em auto;
+    background-color: rgb(194, 194, 194);
+    border-radius: .75rem;
+    padding: 1.5em;
+    min-height: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
 }
 
 .quote p {
@@ -89,9 +82,20 @@ footer {
 }
 
 .favorite-quote-btn {
+    display: none;
     background-color: gold;
 }
 
 .favorite-quote-btn:hover {
     background-color: goldenrod;
+}
+
+.favorite-quotes-container {
+    width: 90%;
+    margin: 2em auto;
+}
+
+.favorite-quotes-container h2 {
+    color: rgb(46, 46, 46);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
