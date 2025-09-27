@@ -1,0 +1,97 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: system-ui;
+    color: white;
+    font-weight: bold;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header,
+footer {
+    background-color: rgb(87, 225, 163);
+    padding-block: 1.25rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: clamp(24px, 2.75vw, 32px);
+}
+
+main {
+    width: auto;
+    max-width: 475px;
+    margin: 2em auto;
+    background-color: rgb(194, 194, 194);
+    border-radius: .75rem;
+    padding: 1.5em;
+    height: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    flex: 1;
+}
+
+button {
+    padding: clamp(.5rem, 1vw, 1rem) clamp(1rem, 1.8vw, 1.5rem);
+    border: none;
+    border-radius: .5rem;
+    font-size: clamp(.75rem, 1.2vw, 1rem);
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+hr {
+    width: 90%;
+    margin-inline: auto;
+    border: 2px solid rgb(194, 194, 194);
+}
+
+aside {
+    margin: 2em auto;
+
+}
+
+aside h2 {
+    color: rgb(46, 46, 46);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+footer {
+    text-align: center;
+}
+
+.quote p {
+    font-size: clamp(18px, 2.3vw, 1.5rem);
+    text-align: center;
+}
+
+.quotes-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-quote-btn {
+    background-color: rgb(48, 192, 127);
+}
+
+.new-quote-btn:hover {
+    background-color: rgb(31, 120, 80);
+}
+
+.favorite-quote-btn {
+    background-color: gold;
+}
+
+.favorite-quote-btn:hover {
+    background-color: goldenrod;
+}

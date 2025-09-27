@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice – Générateur de citations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Quotes Generator</h1>
+    </header>
+    <main>
+        <div class="quotation-block">
+            <blockquote class="quote">
+                <p>Cliquer sur le bouton "Nouvelle citation" pour en charger une</p>
+            </blockquote>
+        </div>
+        <div class="quotes-btn">
+            <button type="button" class="new-quote-btn" onclick="fetchQuote()">Nouvelle citation</button>
+            <button type="button" class="favorite-quote-btn">Ajouter aux favoris</button>
+        </div>
+    </main>
+
+    <hr>
+
+    <aside>
+        <h2>Mes citations favorites ✨</h2>
+        <section class="favorite-quotes-block"></section>
+    </aside>
+    <footer>
+        <p>&copy;2025 - Amâra G. | Quotes Generator</p>
+    </footer>
+</body>
+
+</html>
