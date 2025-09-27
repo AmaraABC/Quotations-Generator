@@ -11,7 +11,7 @@ Le projet est composé d'un dossier nommé [**quotes**](quotes/), lui-même comp
 
 ##  Fonctionnalités de l'application
 - **Charger une nouvelle citation** en cliquant sur un bouton.
+- **Enregistrer** une citation dans les favoris en cliquant également sur un bouton. Les citations favorites sont persistées dans le `LocalStorage`
 
 ## Améliorations futures
-- Persister les citations favorites dans le `LocalStorage` ;
-- **Sauvegarder** des citations en favoris.
+- **Supprimer** des citations en favoris.
