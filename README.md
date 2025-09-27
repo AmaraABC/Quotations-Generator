@@ -1,4 +1,4 @@
-# Quotes Générateur by Amâra
+# Quotes Generator by Amâra
 Date de création du dossier : 23/09/2025
 
 Une mini-application en [**Vanilla JavaScript**](https://www.javascript.com/) qui récupère une **citation aléatoire** depuis l'API publique _[https://api.chucknorris.io/jokes/random](https://api.chucknorris.io/jokes/random)_.
