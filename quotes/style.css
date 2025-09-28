@@ -54,7 +54,7 @@ footer {
     width: auto;
     max-width: 475px;
     margin: 2em auto;
-    background-color: rgb(194, 194, 194);
+    background-color: rgb(180, 255, 115);
     border-radius: .75rem;
     padding: 1.5em;
     min-height: 400px;
@@ -98,4 +98,28 @@ footer {
 .favorite-quotes-container h2 {
     color: rgb(46, 46, 46);
     font-size: clamp(1.25rem, 2vw, 1.5rem);
+    padding-bottom: .75rem;
+}
+
+.favorite-quote:hover {
+    filter: brightness(90%);
+}
+
+.favorite-quote:hover .delete-btn {
+    display: inline;
+}
+
+.delete-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 38, 0);
+    transition: background-color .6s ease;
+}
+
+.delete-btn:hover {
+    background-color: rgb(203, 33, 33);
+    opacity: 1;
 }
