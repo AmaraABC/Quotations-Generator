@@ -2,7 +2,7 @@ function fetchQuote() {
     fetch("https://api.chucknorris.io/jokes/random")
         .then(res => {
             if (!res.ok) {
-                throw new Error('Erreur lors de la récupération de la citation');
+                throw new Error('An error occured when fetching a quote');
             }
             return res.json();
         })
@@ -24,7 +24,7 @@ function addFavoriteQuote() {
     if (!favorites.includes(quote)) {
         favorites.push(quote);
         localStorage.setItem('favorite-quote', JSON.stringify(favorites));
-        alert("Citation ajoutée aux favoris !");
+        alert("Quote added to favorites !");
         document.querySelector(".favorite-quote-btn").style.display = "none";
         displayFavoriteQuotes();
     }
@@ -34,7 +34,7 @@ function deleteFavoriteQuote(index) {
     let favorites = JSON.parse(localStorage.getItem("favorite-quote")) || [];
     favorites.splice(index, 1);
     localStorage.setItem('favorite-quote', JSON.stringify(favorites));
-    alert("Citation totalement supprimée !");
+    alert("Quote successfully removed !");
     displayFavoriteQuotes();
 };
 
@@ -61,7 +61,7 @@ function displayFavoriteQuotes() {
         button.classList.add("delete-btn");
         button.innerHTML = "Supprimer ?";
         button.addEventListener("click", () => {
-            const confirmSupression = confirm("Voulez-vous vraiment supprimer cette citation ?!");
+            const confirmSupression = confirm("Are your sure about that ?!");
             if (confirmSupression) {
                 deleteFavoriteQuote(index);
             };
