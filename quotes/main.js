@@ -59,7 +59,7 @@ function displayFavoriteQuotes() {
 
         const button = document.createElement('button');
         button.classList.add("delete-btn");
-        button.innerHTML = "Supprimer ?";
+        button.innerHTML = "Delete ?";
         button.addEventListener("click", () => {
             const confirmSupression = confirm("Are your sure about that ?!");
             if (confirmSupression) {
