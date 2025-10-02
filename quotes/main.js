@@ -25,10 +25,9 @@ function addFavoriteQuote() {
         favorites.push(quote);
         localStorage.setItem('favorite-quote', JSON.stringify(favorites));
         alert("Citation ajoutée aux favoris !");
+        document.querySelector(".favorite-quote-btn").style.display = "none";
         displayFavoriteQuotes();
-    } else {
-        document.querySelector(".favorite-quote-btn").setAttribute("disabled", true);
-    };
+    }
 };
 
 function deleteFavoriteQuote(index) {
