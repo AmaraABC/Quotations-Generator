@@ -1,3 +1,5 @@
+let displayedQuote = null;
+
 function fetchQuote() {
     fetch("https://api.chucknorris.io/jokes/random")
         .then(res => {
@@ -7,7 +9,8 @@ function fetchQuote() {
             return res.json();
         })
         .then(data => {
-            document.querySelector(".quote p").innerHTML = `${data.value}`;
+            displayedQuote = data.value;
+            document.querySelector(".quote p").innerHTML = `${displayedQuote}`;
             document.querySelector(".favorite-quote-btn").style.display = "inline-block";
         })
         .catch(error => {
@@ -18,11 +21,10 @@ function fetchQuote() {
 };
 
 function addFavoriteQuote() {
-    const quote = document.querySelector(".quote p").innerHTML;
     let favorites = JSON.parse(localStorage.getItem("favorite-quote")) || [];
 
-    if (!favorites.includes(quote)) {
-        favorites.push(quote);
+    if (!favorites.includes(displayedQuote)) {
+        favorites.push(displayedQuote);
         localStorage.setItem('favorite-quote', JSON.stringify(favorites));
         alert("Quote added to favorites !");
         document.querySelector(".favorite-quote-btn").style.display = "none";
