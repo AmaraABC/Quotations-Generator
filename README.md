@@ -13,6 +13,7 @@ Le projet est composé d'un dossier nommé [**quotes**](quotes/), lui-même comp
 - **Charger une nouvelle citation** en cliquant sur un bouton.
 - **Enregistrer** une citation dans les favoris en cliquant également sur un bouton. Les citations favorites sont persistées dans le `LocalStorage`.
 - **Supprimer** des citations ajoutée auparavant en favoris.
+- Parcourir par cinq les citations favorites grâce à un système de **pagination**.
 
 ## Améliorations futures
-- Ajouter une **pagination** pour faciliter le parcours des citations en favoris.
+- Un **style CSS** plus interactif et optimisé.
