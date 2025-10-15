@@ -73,12 +73,12 @@ footer {
     justify-content: space-between;
 }
 
-.new-quote-btn {
+.new-quote-btn, .favorite-pagination-btn button {
     background-color: rgb(48, 192, 127);
 }
 
-.new-quote-btn:hover {
-    background-color: rgb(31, 120, 80);
+.new-quote-btn:hover, .favorite-pagination-btn button:hover {
+    background-color: rgb(37, 148, 98);
 }
 
 .favorite-quote-btn {
@@ -122,4 +122,10 @@ footer {
 .delete-btn:hover {
     background-color: rgb(203, 33, 33);
     opacity: 1;
+}
+
+.favorite-pagination-btn {
+    width: fit-content;
+    margin-top: 3rem;
+    justify-self: center;
 }
