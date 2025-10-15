@@ -73,11 +73,11 @@ footer {
     justify-content: space-between;
 }
 
-.new-quote-btn, .favorite-pagination-btn button {
+.new-quote-btn, .favorite-pagination button {
     background-color: rgb(48, 192, 127);
 }
 
-.new-quote-btn:hover, .favorite-pagination-btn button:hover {
+.new-quote-btn:hover, .favorite-pagination button:hover {
     background-color: rgb(37, 148, 98);
 }
 
@@ -92,13 +92,17 @@ footer {
 
 .favorite-quotes-container {
     width: 90%;
-    margin: 2em auto;
+    margin: 2em auto 3em auto;
 }
 
 .favorite-quotes-container h2 {
     color: rgb(46, 46, 46);
     font-size: clamp(1.25rem, 2vw, 1.5rem);
     padding-bottom: .75rem;
+}
+
+.favorite-quotes-block {
+    min-height: 40vw;
 }
 
 .favorite-quote:hover {
@@ -124,8 +128,20 @@ footer {
     opacity: 1;
 }
 
-.favorite-pagination-btn {
+.favorite-pagination {
     width: fit-content;
-    margin-top: 3rem;
     justify-self: center;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.favorite-pagination button:disabled {
+    background-color: rgb(194, 194, 194);
+    cursor: not-allowed;
+}
+
+.page-info {
+    color: rgb(46, 46, 46);
+    font-size: clamp(.75rem, 1.4vw, 1rem);
 }

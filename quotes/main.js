@@ -1,5 +1,13 @@
 let displayedQuote = null;
 
+// Boutons, variable(s) et constante(s) nécessaires pour la pagination des citations en favoris
+const previousButton = document.getElementById("previous-page-btn");
+const pageInfo = document.getElementById("info");
+const nextButton = document.getElementById("next-page-btn");
+var page = 1;
+const pageSize = 5;
+
+
 function fetchQuote() {
     fetch("https://api.chucknorris.io/jokes/random")
         .then(res => {
@@ -29,14 +37,24 @@ function addFavoriteQuote() {
         alert("Quote added to favorites !");
         document.querySelector(".favorite-quote-btn").style.display = "none";
         displayFavoriteQuotes();
-    }
+    };
 };
 
-function deleteFavoriteQuote(index) {
+function deleteFavoriteQuote(quote) {
     let favorites = JSON.parse(localStorage.getItem("favorite-quote")) || [];
-    favorites.splice(index, 1);
-    localStorage.setItem('favorite-quote', JSON.stringify(favorites));
-    alert("Quote successfully removed !");
+    const index = favorites.indexOf(quote);
+
+    if (index !== -1) {
+        favorites.splice(index, 1);
+        localStorage.setItem('favorite-quote', JSON.stringify(favorites));
+    };
+
+    const totalPages = Math.ceil(favorites.length / pageSize);
+
+    if (page > totalPages) {
+        page = totalPages || 1;
+    };
+
     displayFavoriteQuotes();
 };
 
@@ -44,13 +62,19 @@ function displayFavoriteQuotes() {
     const quotesSection = document.querySelector(".favorite-quotes-block");
     let favorites = JSON.parse(localStorage.getItem("favorite-quote")) || [];
 
+    const totalPages = Math.ceil(favorites.length / pageSize);
+    const start = (page - 1) * pageSize;
+    const end = page * pageSize
+    const currentFavorites = favorites.slice(start, end);
+    pageInfo.innerHTML = `${page} / ${totalPages || 1}`;
+
     quotesSection.innerHTML = "";
 
-    favorites.forEach((quote, index) => {
+    currentFavorites.forEach((quote) => {
         const div = document.createElement('div');
         div.classList.add('favorite-quote');
         div.style.backgroundColor = "gold";
-        div.style.padding = "1.25em";
+        div.style.padding = "1em";
         div.style.marginBlock = "1rem";
         div.style.borderRadius = ".75rem";
         div.style.position = "relative";
@@ -65,7 +89,7 @@ function displayFavoriteQuotes() {
         button.addEventListener("click", () => {
             const confirmSupression = confirm("Are your sure about that ?!");
             if (confirmSupression) {
-                deleteFavoriteQuote(index);
+                deleteFavoriteQuote(quote);
             };
         });
 
@@ -73,6 +97,25 @@ function displayFavoriteQuotes() {
         div.appendChild(button);
         quotesSection.appendChild(div);
     });
+
+    previousButton.disabled = (page === 1);
+    nextButton.disabled = (page === totalPages || totalPages === 0);
 };
+
+previousButton.addEventListener('click', () => {
+    if (page > 1) {
+        page--;
+        displayFavoriteQuotes();
+    };
+});
+
+nextButton.addEventListener('click', () => {
+    let favorites = JSON.parse(localStorage.getItem("favorite-quote")) || [];
+    const totalPages = Math.ceil(favorites.length / pageSize);
+    if (page < totalPages) {
+        page++;
+        displayFavoriteQuotes();
+    };
+});
 
 displayFavoriteQuotes();
